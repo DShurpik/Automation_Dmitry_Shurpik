@@ -10,14 +10,17 @@ import org.testng.annotations.Test;
 
 public class Lecture4_3HomeWorkGoogleBy {
     @Test
-    public void test1(){
-
+    public void test1(){  // проверка что после поиска в гугл.бай в строке поиска остается текст "Привет, мир"
         WebDriver chromeDriver = new ChromeDriver();
+        chromeDriver.manage().window().maximize();
         chromeDriver.get("https://www.google.by/");
         WebElement search = chromeDriver.findElement(By.xpath("//input[@name='q']"));
         search.click();
         search.sendKeys("Привет, мир");
         search.sendKeys(Keys.ENTER);
-        Assert.assertTrue(search.isDisplayed());
+        WebElement searchResult = chromeDriver.findElement(By.xpath("//*[@id=\"tsf\"]/div[1]/div[1]/div[2]/div/div[2]/input"));
+        searchResult.isDisplayed();
+        String s = searchResult.getAttribute("value");
+        System.out.println(s);
     }
 }
