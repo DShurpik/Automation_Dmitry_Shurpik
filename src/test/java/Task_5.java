@@ -1,4 +1,3 @@
-package Lecture5;
 import Driver.SimpleDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
