@@ -32,23 +32,23 @@ public class Task_5 {
     @Test
     public void test1(){
         WebElement setRoomWidth = findElement("calc_roomwidth");
-        setRoomWidth.sendKeys(Keys.BACK_SPACE, "4.4");
+        setRoomWidth.sendKeys(Keys.chord(Keys.CONTROL, "a"), "4.4");
         WebElement setRoomHeight = findElement("calc_roomheight");
-        setRoomHeight.sendKeys(Keys.BACK_SPACE, "5.5");
+        setRoomHeight.sendKeys(Keys.chord(Keys.CONTROL, "a"), "5.5");
         WebElement setLaminateWidth = findElement("calc_lamwidth");
-        setLaminateWidth.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, "1600");
+        setLaminateWidth.sendKeys(Keys.chord(Keys.CONTROL, "a"), "1600");
         WebElement setLaminateHeight = findElement("calc_lamheight");
-        setLaminateHeight.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, "250");
+        setLaminateHeight.sendKeys(Keys.chord(Keys.CONTROL, "a"), "250");
         WebElement setInpack = findElement("calc_inpack");
-        setInpack.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, "25");
+        setInpack.sendKeys(Keys.chord(Keys.CONTROL, "a"), "25");
         WebElement setPrice = findElement("calc_price");
-        setPrice.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, "850");
+        setPrice.sendKeys(Keys.chord(Keys.CONTROL, "a"), "850");
         Select selectDirect = new Select(getWebDriver().findElement(By.name("calc_direct")));
         selectDirect.selectByValue("toh");
         WebElement setBias = findElement("calc_bias");
-        setBias.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, "650");
+        setBias.sendKeys(Keys.chord(Keys.CONTROL, "a"), "650");
         WebElement setWallDist = findElement("calc_walldist");
-        setWallDist.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, "100");
+        setWallDist.sendKeys(Keys.chord(Keys.CONTROL, "a"), "100");
         WebElement submit = getWebDriver().findElement(By.cssSelector("[value='Рассчитать']"));
         submit.click();
         List<String> expectedResult = Arrays.asList(
@@ -59,23 +59,23 @@ public class Task_5 {
     @Test
     public void test2(){
         WebElement setRoomWidth = findElement("calc_roomwidth");
-        setRoomWidth.sendKeys(Keys.BACK_SPACE, "12");
+        setRoomWidth.sendKeys(Keys.chord(Keys.CONTROL, "a"), "12");
         WebElement setRoomHeight = findElement("calc_roomheight");
-        setRoomHeight.sendKeys(Keys.BACK_SPACE, "9");
+        setRoomHeight.sendKeys(Keys.chord(Keys.CONTROL, "a"), "9");
         WebElement setLaminateWidth = findElement("calc_lamwidth");
-        setLaminateWidth.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, "1800");
+        setLaminateWidth.sendKeys(Keys.chord(Keys.CONTROL, "a"), "1800");
         WebElement setLaminateHeight = findElement("calc_lamheight");
-        setLaminateHeight.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, "300");
+        setLaminateHeight.sendKeys(Keys.chord(Keys.CONTROL, "a"), "300");
         WebElement setInpack = findElement("calc_inpack");
-        setInpack.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, "9");
+        setInpack.sendKeys(Keys.chord(Keys.CONTROL, "a"), "9");
         WebElement setPrice = findElement("calc_price");
-        setPrice.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, "1000");
+        setPrice.sendKeys(Keys.chord(Keys.CONTROL, "a"), "1000");
         Select selectDirect = new Select(getWebDriver().findElement(By.name("calc_direct")));
         selectDirect.selectByValue("tow");
         WebElement setBias = findElement("calc_bias");
-        setBias.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, "500");
+        setBias.sendKeys(Keys.chord(Keys.CONTROL, "a"), "500");
         WebElement setWallDist = findElement("calc_walldist");
-        setWallDist.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, "200");
+        setWallDist.sendKeys(Keys.chord(Keys.CONTROL, "a"), "200");
         WebElement submit = getWebDriver().findElement(By.cssSelector("[value='Рассчитать']"));
         submit.click();
         List<String> expectedResult = Arrays.asList(
@@ -86,23 +86,23 @@ public class Task_5 {
     @Test
     public void test3(){
         WebElement setRoomWidth = findElement("calc_roomwidth");
-        setRoomWidth.sendKeys(Keys.BACK_SPACE, "14.5");
+        setRoomWidth.sendKeys(Keys.chord(Keys.CONTROL, "a"), "14.5");
         WebElement setRoomHeight = findElement("calc_roomheight");
-        setRoomHeight.sendKeys(Keys.BACK_SPACE, "9.5");
+        setRoomHeight.sendKeys(Keys.chord(Keys.CONTROL, "a"), "9.5");
         WebElement setLaminateWidth = findElement("calc_lamwidth");
-        setLaminateWidth.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, "2500");
+        setLaminateWidth.sendKeys(Keys.chord(Keys.CONTROL, "a"), "2500");
         WebElement setLaminateHeight = findElement("calc_lamheight");
-        setLaminateHeight.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, "400");
+        setLaminateHeight.sendKeys(Keys.chord(Keys.CONTROL, "a"), "400");
         WebElement setInpack = findElement("calc_inpack");
-        setInpack.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, "5");
+        setInpack.sendKeys(Keys.chord(Keys.CONTROL, "a"), "5");
         WebElement setPrice = findElement("calc_price");
-        setPrice.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, "2000");
+        setPrice.sendKeys(Keys.chord(Keys.CONTROL, "a"), "2000");
         Select selectDirect = new Select(getWebDriver().findElement(By.name("calc_direct")));
         selectDirect.selectByValue("tow");
         WebElement setBias = findElement("calc_bias");
-        setBias.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, "500");
+        setBias.sendKeys(Keys.chord(Keys.CONTROL, "a"), "500");
         WebElement setWallDist = findElement("calc_walldist");
-        setWallDist.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, "400");
+        setWallDist.sendKeys(Keys.chord(Keys.CONTROL, "a"), "400");
         WebElement submit = getWebDriver().findElement(By.cssSelector("[value='Рассчитать']"));
         submit.click();
         List<String> expectedResult = Arrays.asList(
