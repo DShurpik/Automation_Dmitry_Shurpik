@@ -27,6 +27,10 @@ public class SimpleDriver {
     public static WebDriver getWebDriver() {
         return webDriver;
     }
+    public static void closeWebDriver(){
+        webDriver.close();
+        webDriver.quit();
+    }
     private static void setWebDriver(){
         System.setProperty("webdriver.chrome.driver","src/test/java/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver(getChromeOptions());
