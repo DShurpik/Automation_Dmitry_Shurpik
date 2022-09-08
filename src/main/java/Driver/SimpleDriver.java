@@ -17,11 +17,11 @@ public class SimpleDriver {
             * с помощью геттера можно получить драйвер
             * **/
             WebDriverManager.chromedriver().setup();
-            //WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
-            //WebDriverManager.getInstance("chrome").setup();
+
             webDriver = new ChromeDriver(getChromeOptions());
-            //without WebDriverManager
-            //setWebDriver()
+            webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+            webDriver.manage().timeouts().scriptTimeout(Duration.ofSeconds(20));
+            webDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         }
     }
     public static WebDriver getWebDriver() {
@@ -30,6 +30,7 @@ public class SimpleDriver {
     public static void closeWebDriver(){
         webDriver.close();
         webDriver.quit();
+        webDriver = null;
     }
     private static void setWebDriver(){
         System.setProperty("webdriver.chrome.driver","src/test/java/resources/chromedriver.exe");

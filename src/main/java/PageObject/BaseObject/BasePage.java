@@ -1,11 +1,16 @@
 package PageObject.BaseObject;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import static Driver.SimpleDriver.getWebDriver;
 
 public abstract class BasePage {
+    WebDriver wait;
+
+
+
     protected void enter(WebElement webElement, String enterData) {
         System.out.println("I'm enter :: " + enterData + ", by web element :: " + webElement);
         webElement.clear();

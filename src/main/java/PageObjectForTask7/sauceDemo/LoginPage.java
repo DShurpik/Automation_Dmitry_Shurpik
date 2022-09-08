@@ -8,7 +8,7 @@ public class LoginPage {
     By username = By.id("user-name");
     By password = By.id("password");
     By loginBtn = By.id("login-button");
-    By errorFieldIsEmpty = By.xpath("//h3");
+    By errorFieldIsEmpty = By.xpath("//div[@class='error-message-container error']");
     By errorLockedUser = By.xpath("//div[@class='error-message-container error']");
 
     public void open(){
@@ -30,7 +30,6 @@ public class LoginPage {
     }
     public void errorLockedUserIsDisplayed(){
         System.out.println("Epic sadface: Sorry, this user has been locked out.");
-        System.out.println(getWebDriver().findElement(errorLockedUser).getText());
         getWebDriver().findElement(errorLockedUser);
     }
 }
