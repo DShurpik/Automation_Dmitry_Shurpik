@@ -21,7 +21,11 @@ public class Task8 extends BaseTest {
                 .clickCheckBox()
                 .isEnableCheckBox()
                 .clickRemoveBtn()
-                .inscriptionIsEnable();
+                .inscriptionIsEnable()
+                .inputDisable()
+                .clickEnableBtn()
+                .inputTextEnable()
+                .sendTextInInput("инпут enabled");
 
     }
 }

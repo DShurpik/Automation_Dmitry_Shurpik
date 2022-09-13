@@ -49,14 +49,24 @@ public abstract class BasePage {
         System.out.println("I'm click by :: " + webElement);
         webElement.click();
     }
-    protected void isEnable(WebElement webElement) {
-        System.out.println("WebElement is enable: " + webElement);
-        webElement.isDisplayed();
-    }
-    protected void isEnable(By locator) {
+
+    protected void isDisplayed(By locator) {
         System.out.println("WebElement is enable: " + locator);
         driver.findElement(locator).isDisplayed();
     }
+    protected void isDisplayed(WebElement webElement) {
+        System.out.println("WebElement is enable: " + webElement);
+        webElement.isDisplayed();
+    }
+    protected void isDisable(By locator) {
+        System.out.println("WebElement is enable: " + locator);
+        driver.findElement(locator).isEnabled();
+    }
+    protected void isDisable(WebElement webElement) {
+        System.out.println("WebElement is enable: " + webElement);
+        webElement.isEnabled();
+    }
+
 
     protected String getText(By locator) {
         System.out.println("I'm get text by  :: " + locator);

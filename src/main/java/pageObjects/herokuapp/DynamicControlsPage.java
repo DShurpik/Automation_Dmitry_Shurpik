@@ -8,8 +8,10 @@ public class DynamicControlsPage extends BasePage {
     private By checkBox = By.xpath("//input[@type='checkbox']");
     private By removeBtn = By.xpath("//button[text()='Remove']");
     private By inscription = By.id("message");
-    private By input = By.xpath("//input[@type='text']");
+    private By inputDisable = By.xpath("//input[@type='text' and 'disabled']");
+    private By inputEnable = By.xpath("//p[@id='message']");
     private By inputBtn = By.xpath("//button[text()='Enable']");
+    private By inputText = By.xpath("//input[@type='text']");
 
     public void navigateTo(NavigationItems navigationItems){
         click(getByLink(navigationItems.getItem()));
@@ -28,7 +30,7 @@ public class DynamicControlsPage extends BasePage {
         return this;
     }
     public DynamicControlsPage isEnableCheckBox(){
-        isEnable(checkBox);
+        isDisplayed(checkBox);
         return this;
     }
     public DynamicControlsPage clickRemoveBtn(){
@@ -36,7 +38,23 @@ public class DynamicControlsPage extends BasePage {
         return this;
     }
     public DynamicControlsPage inscriptionIsEnable(){
-        isEnable(inscription);
+        isDisplayed(inscription);
+        return this;
+    }
+    public DynamicControlsPage inputDisable(){
+        isDisplayed(inputDisable);
+        return this;
+    }
+    public DynamicControlsPage clickEnableBtn(){
+        click(inputBtn);
+        return this;
+    }
+    public DynamicControlsPage inputTextEnable(){
+        isDisable(inputEnable);
+        return this;
+    }
+    public DynamicControlsPage sendTextInInput(String text){
+        enter(inputText, text);
         return this;
     }
 
