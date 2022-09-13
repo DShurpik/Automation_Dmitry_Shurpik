@@ -3,7 +3,7 @@ package PageObjectForTask7.sauceDemo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import static Driver.SimpleDriver.getWebDriver;
+import static driver.SimpleDriver.getWebDriver;
 
 public class ProductPage {
 

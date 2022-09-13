@@ -1,13 +1,13 @@
 package Lecture4;
 
-import Driver.SimpleDriver;
+import driver.SimpleDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import java.time.Duration;
-import static Driver.SimpleDriver.getWebDriver;
+import static driver.SimpleDriver.getWebDriver;
 public class BMICalculator {
     @BeforeTest
     public void preconditions(){

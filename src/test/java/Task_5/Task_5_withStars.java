@@ -1,6 +1,6 @@
 package Task_5;
 
-import Driver.SimpleDriver;
+import driver.SimpleDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -11,7 +11,7 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 
-import static Driver.SimpleDriver.getWebDriver;
+import static driver.SimpleDriver.getWebDriver;
 
 
 public class Task_5_withStars {

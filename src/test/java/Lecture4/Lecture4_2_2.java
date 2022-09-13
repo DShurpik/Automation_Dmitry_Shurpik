@@ -1,19 +1,15 @@
 package Lecture4;
 
-import Driver.SimpleDriver;
+import driver.SimpleDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import static Driver.SimpleDriver.getWebDriver;
-
-import java.time.Duration;
+import static driver.SimpleDriver.getWebDriver;
 
 public class Lecture4_2_2 {
 

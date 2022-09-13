@@ -1,18 +1,21 @@
 package Lecture8;
 
-import PageObject.saucedemo.LoginPage;
-import PageObject.saucedemo.ProductPage;
+import PageObjectForTask7.BaseObject.BaseTest;
 import org.testng.annotations.Test;
+import pageObjects.saucedemo.LoginPage;
+import pageObjects.saucedemo.ProductPage;
 
-public class Lecture8_1 {
+public class Lecture8_1 extends BaseTest {
 
     @Test
-    public void test(){
+    public void login(){
+
         new LoginPage()
                 .open()
                 .enterUsername("standard_user")
                 .enterPassword("secret_sauce")
-                .clickLogin();
+                .clickLogin()
+                .verifyThatLoginPageIsClosed();
         new ProductPage().verifyPageTitle();
 
     }

@@ -1,10 +1,10 @@
 package PageObjectForTask7.BaseObject;
 
-import Driver.SimpleDriver;
+import driver.SimpleDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-import static Driver.SimpleDriver.closeWebDriver;
+import static driver.SimpleDriver.closeWebDriver;
 
 public abstract class BaseTest {
     @BeforeTest

@@ -1,7 +1,7 @@
 package PageObjectForTask7.sauceDemo;
 
 import org.openqa.selenium.By;
-import static Driver.SimpleDriver.getWebDriver;
+import static driver.SimpleDriver.getWebDriver;
 
 public class LoginPage {
 

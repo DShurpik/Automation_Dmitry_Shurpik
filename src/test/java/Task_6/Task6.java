@@ -1,6 +1,6 @@
 package Task_6;
 
-import Driver.SimpleDriver;
+import driver.SimpleDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -8,8 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import static Driver.SimpleDriver.getWebDriver;
-import static org.openqa.selenium.support.locators.RelativeLocator.with;
+import static driver.SimpleDriver.getWebDriver;
 
 public class Task6 {
     @BeforeTest
