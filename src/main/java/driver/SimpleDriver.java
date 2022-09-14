@@ -19,9 +19,9 @@ public class SimpleDriver {
             WebDriverManager.chromedriver().setup();
 
             webDriver = new ChromeDriver(getChromeOptions());
-            webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-            webDriver.manage().timeouts().scriptTimeout(Duration.ofSeconds(20));
-            webDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+            webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+            webDriver.manage().timeouts().scriptTimeout(Duration.ofSeconds(3));
+            webDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(3));
         }
     }
     public static WebDriver getWebDriver() {
@@ -35,7 +35,7 @@ public class SimpleDriver {
     private static void setWebDriver(){
         System.setProperty("webdriver.chrome.driver","src/test/java/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver(getChromeOptions());
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         webDriver = driver;
     }
     private static ChromeOptions getChromeOptions(){

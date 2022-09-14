@@ -15,6 +15,10 @@ public class LoginPage extends BasePage {
         driver.get("https://www.saucedemo.com/");
         return this;
     }
+    public LoginPage open(String url) {
+        driver.get(url);
+        return this;
+    }
 
     public LoginPage enterUsername(String username) {
         enter(this.username, username);

@@ -3,10 +3,7 @@ package Lecture8;
 import PageObjectForTask7.BaseObject.BaseTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pageObjects.herokuapp.ContextMenuPage;
-import pageObjects.herokuapp.DynamicLoadingPage;
-import pageObjects.herokuapp.FramesPage;
-import pageObjects.herokuapp.NavigationPage;
+import pageObjects.herokuapp.*;
 
 import static pageObjects.herokuapp.NavigationItems.*;
 
@@ -18,7 +15,7 @@ public class Lecture8_2 extends BaseTest {
                 .open();
     }
 
-    @Test(enabled = false)
+    @Test
     public void dynamicLoading__Test(){
         new NavigationPage()
                 .open()
@@ -28,13 +25,19 @@ public class Lecture8_2 extends BaseTest {
                 .clickOnStart()
                 .pageIsLoaded();
     }
-    @Test(enabled = false)
+    @Test
     public void scroolPage_Test(){
         new NavigationPage()
                 .navigateTo(INFINITE_SCROLL);
     }
+    @Test
+    public void scrollPage_Test() {
+        new NavigationPage()
+                .navigateTo(INFINITE_SCROLL);
+        new InfiniteScrollPage().infiniteScroll(10);
+    }
 
-    @Test(enabled = false)
+    @Test
     public void contexMenu_Test(){
         new NavigationPage()
                 .navigateTo(CONTEXT_MENU);
@@ -51,5 +54,4 @@ public class Lecture8_2 extends BaseTest {
                 .unSwitchFrame()
                 .clickBoldTxt();
     }
-
 }
