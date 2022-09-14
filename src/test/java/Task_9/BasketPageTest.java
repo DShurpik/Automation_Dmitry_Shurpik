@@ -8,7 +8,6 @@ import pageObjects.saucedemo.ProductPage;
 
 public class BasketPageTest extends BaseTest {
 
-
     @Test(enabled = true, dataProvider = "produts")
     public void addProductFromMainPageToBasketRemoveProductFromBasket(String productName){
         new LoginPage()
