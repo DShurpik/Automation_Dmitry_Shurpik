@@ -7,7 +7,7 @@ import pageObjects.saucedemo.LoginPage;
 
 public class LoginPageTest extends BaseTest {
 
-    @Test(dataProvider = "login data", groups = "smoke", invocationCount = 3, priority = 1)
+    @Test(dataProvider = "login data", groups = "smoke", invocationCount = 2, priority = 1)
     public void loginTestPositiveAndNegative(String username, String password){
         new LoginPage()
                 .open()
