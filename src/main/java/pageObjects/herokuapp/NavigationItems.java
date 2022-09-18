@@ -6,7 +6,12 @@ public enum NavigationItems {
     CONTEXT_MENU("Context Menu"),
     FRAMES("Frames"),
     DYNAMIC_CONTROLS("Dynamic Controls"),
-    ADD_REMOVE_ELEMENTS("Add/Remove Elements");
+    ADD_REMOVE_ELEMENTS("Add/Remove Elements"),
+    MULTIPLE_WINDOWS("Multiple Windows"),
+    DROPDOWN("Dropdown");
+
+
+
 
     private String item;
 

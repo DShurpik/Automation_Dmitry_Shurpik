@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test 9 HomeWork">
+
+<test name="task9 smoke">
+    <groups>
+        <run>
+            <include name="smoke"></include>
+        </run>
+    </groups>
+    <classes>
+        <class name="Task_9.LoginPageTest"></class>
+        <class name="Task_9.BasketPageTest"></class>
+        <class name="Task_9.BasketOnMainPageTest"></class>
+    </classes>
+</test>
+    
+    <test name="start all test">
+        <classes>
+            <class name="Task_9.LoginPageTest"></class>
+            <class name="Task_9.BasketOnMainPageTest"></class>
+            <class name="Task_9.BasketPageTest"></class>
+        </classes>
+    </test>
+
+</suite>
