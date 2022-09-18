@@ -8,7 +8,8 @@ public enum NavigationItems {
     DYNAMIC_CONTROLS("Dynamic Controls"),
     ADD_REMOVE_ELEMENTS("Add/Remove Elements"),
     MULTIPLE_WINDOWS("Multiple Windows"),
-    DROPDOWN("Dropdown");
+    DROPDOWN("Dropdown"),
+    DRAG_AND_DROP("Drag and Drop");
 
 
 
