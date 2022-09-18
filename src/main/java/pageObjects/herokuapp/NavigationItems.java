@@ -5,7 +5,8 @@ public enum NavigationItems {
     INFINITE_SCROLL("Infinite Scroll"),
     CONTEXT_MENU("Context Menu"),
     FRAMES("Frames"),
-    DYNAMIC_CONTROLS("Dynamic Controls");
+    DYNAMIC_CONTROLS("Dynamic Controls"),
+    ADD_REMOVE_ELEMENTS("Add/Remove Elements");
 
     private String item;
 
