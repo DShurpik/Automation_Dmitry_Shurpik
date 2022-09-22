@@ -13,9 +13,9 @@ import static driver.SimpleDriver.*;
 
 public class DragAndDropPage extends BasePage {
 
-    private WebElement elementAA = getWebDriver().findElement(By.xpath("//div[@class='column'][@id='column-a']"));
+    private WebElement elementAA = getWebDriver().findElement(By.xpath("//div[@class='column' and @id='column-a']"));
 
-    private WebElement elementBB = getWebDriver().findElement(By.xpath("//div[@class='column'][@id='column-b']"));
+    private WebElement elementBB = getWebDriver().findElement(By.xpath("//div[@class='column' and @id='column-b']"));
 
     private WebElement elementAB = getWebDriver().findElement(By.xpath("//div[@id='column-a']//header[text()='B']"));
 
@@ -54,12 +54,13 @@ public class DragAndDropPage extends BasePage {
     }
 
     public DragAndDropPage moveElement(){ // ??????????????????
-        //act.moveToElement(elementA).clickAndHold().moveToElement(elementB).release().build().perform();
+        act.moveToElement(elementAA).clickAndHold().moveToElement(elementBB).release().build().perform();
         //act.moveToElement(elementA).click().clickAndHold().moveToElement(elementB).perform();
-        //act.clickAndHold(elementA).moveToElement(elementB).release(elementB).build().perform();
-        //Action dragAndDrop = act.clickAndHold(elementAA).moveToElement(elementAA).release(elementBB).build();
+        //act.clickAndHold(elementAA).moveToElement(elementBB).release(elementBB).build().perform();
+        //Action dragAndDrop = act.clickAndHold(elementAA).moveToElement(elementBB).release(elementBB).build();
         //dragAndDrop.perform();
-        actions.dragAndDrop(elementAA, elementBB).perform();
+        //actions.dragAndDrop(elementAA, elementBB).perform();
+        //act.dragAndDrop(elementAA,elementBB).perform();
 
         return this;
     }

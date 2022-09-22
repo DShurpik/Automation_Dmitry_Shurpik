@@ -9,7 +9,9 @@ public enum NavigationItems {
     ADD_REMOVE_ELEMENTS("Add/Remove Elements"),
     MULTIPLE_WINDOWS("Multiple Windows"),
     DROPDOWN("Dropdown"),
-    DRAG_AND_DROP("Drag and Drop");
+    DRAG_AND_DROP("Drag and Drop"),
+    FILE_UPLOAD("File Download"),
+    SORTABLE_DATA_TABLES("Sortable Data Tables");
 
 
 

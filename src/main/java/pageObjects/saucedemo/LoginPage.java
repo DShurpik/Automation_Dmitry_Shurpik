@@ -25,6 +25,15 @@ public class LoginPage extends BasePage {
         return this;
     }
 
+    public LoginPage userName (String userName){
+        enter(this.username,System.getProperty(userName));
+        return this;
+    }
+    public LoginPage userPassword (String passwordUser){
+        enter(this.password, System.getProperty(passwordUser));
+        return this;
+    }
+
     public LoginPage enterPassword(String password) {
         enter(this.password, password);
         return this;

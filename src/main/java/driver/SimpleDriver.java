@@ -8,37 +8,40 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.time.Duration;
 
 public class SimpleDriver {
+    private static ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
 
-    private static WebDriver webDriver;
     {
-        if(webDriver == null){
-            /**  В блоке инициализации создается хромдрайвер
-            * в драйвменеджер дается хромдрайвер, возвращается и записывается в переменную класса симплДрайвер
-            * с помощью геттера можно получить драйвер
-            * **/
+        if (webDriver.get() == null) {
             WebDriverManager.chromedriver().setup();
-
-            webDriver = new ChromeDriver(getChromeOptions());
-            webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
-            webDriver.manage().timeouts().scriptTimeout(Duration.ofSeconds(6));
-            webDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(6));
+            webDriver.set(new ChromeDriver(getChromeOptions()));
+            webDriver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+            webDriver.get().manage().timeouts().scriptTimeout(Duration.ofSeconds(20));
+            webDriver.get().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         }
     }
+
+
     public static WebDriver getWebDriver() {
-        return webDriver;
+        return webDriver.get();
     }
-    public static void closeWebDriver(){
-        webDriver.close();
-        webDriver.quit();
-        webDriver = null;
+
+    public static void closeWebDriver() {
+        if (webDriver != null) {
+            webDriver.get().close();
+            webDriver.get().quit();
+            webDriver.remove();
+        }
     }
-    private static void setWebDriver(){
-        System.setProperty("webdriver.chrome.driver","src/test/java/resources/chromedriver.exe");
+
+
+    private static void setWebDriver() {
+        System.setProperty("webdriver.chrome.driver", "src/test/java/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver(getChromeOptions());
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        webDriver = driver;
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        webDriver.set(driver);
     }
-    private static ChromeOptions getChromeOptions(){
+
+    private static ChromeOptions getChromeOptions() {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("start-maximized");
         return chromeOptions;
