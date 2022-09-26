@@ -10,7 +10,7 @@ public enum NavigationItems {
     MULTIPLE_WINDOWS("Multiple Windows"),
     DROPDOWN("Dropdown"),
     DRAG_AND_DROP("Drag and Drop"),
-    FILE_UPLOAD("File Download"),
+    FILE_UPLOAD("File Upload"),
     SORTABLE_DATA_TABLES("Sortable Data Tables");
 
 
