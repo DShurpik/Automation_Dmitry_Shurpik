@@ -23,3 +23,5 @@ mvn -Dtest=Lecture8_1#login1withProperty test -DAAA="standard_user" -DFFF="secre
     В тест 
 
 
+mvn clean test -DsuiteXml="Lecture_11"
+
