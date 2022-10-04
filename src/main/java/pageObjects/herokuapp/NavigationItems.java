@@ -5,7 +5,16 @@ public enum NavigationItems {
     INFINITE_SCROLL("Infinite Scroll"),
     CONTEXT_MENU("Context Menu"),
     FRAMES("Frames"),
-    DYNAMIC_CONTROLS("Dynamic Controls");
+    DYNAMIC_CONTROLS("Dynamic Controls"),
+    ADD_REMOVE_ELEMENTS("Add/Remove Elements"),
+    MULTIPLE_WINDOWS("Multiple Windows"),
+    DROPDOWN("Dropdown"),
+    DRAG_AND_DROP("Drag and Drop"),
+    FILE_UPLOAD("File Upload"),
+    SORTABLE_DATA_TABLES("Sortable Data Tables");
+
+
+
 
     private String item;
 

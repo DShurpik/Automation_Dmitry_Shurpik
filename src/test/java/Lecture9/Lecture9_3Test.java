@@ -3,7 +3,9 @@ package Lecture9;
 import org.testng.annotations.*;
 import pageObjects.baseObjects.BaseTest;
 import pageObjects.saucedemo.LoginPage;
+import testNgUtils.Listener;
 
+@Listeners(Listener.class)
 public class Lecture9_3Test extends BaseTest {
 
 

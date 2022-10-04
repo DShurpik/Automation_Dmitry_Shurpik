@@ -1,16 +1,16 @@
 package Lecture8;
 
-import PageObjectForTask7.BaseObject.BaseTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pageObjects.baseObjects.BaseTest;
 import pageObjects.herokuapp.*;
 
 import static pageObjects.herokuapp.NavigationItems.*;
 
 public class Lecture8_2 extends BaseTest {
 
-    @BeforeTest
-    public void precondition(){
+    @BeforeMethod
+    public void precondition() {
         new NavigationPage()
                 .open();
     }
@@ -25,11 +25,7 @@ public class Lecture8_2 extends BaseTest {
                 .clickOnStart()
                 .pageIsLoaded();
     }
-    @Test
-    public void scroolPage_Test(){
-        new NavigationPage()
-                .navigateTo(INFINITE_SCROLL);
-    }
+
     @Test
     public void scrollPage_Test() {
         new NavigationPage()
