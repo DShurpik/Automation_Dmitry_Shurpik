@@ -9,6 +9,8 @@ import static driver.SimpleDriver.*;
 
 public class DropdownListPage extends BasePage {
 
+    private By dropdown = By.id("dropdown");
+
     private By title = By.xpath("//h3[text()]");
 
     private By selectOption1Index = By.xpath("//option[@value='1']");

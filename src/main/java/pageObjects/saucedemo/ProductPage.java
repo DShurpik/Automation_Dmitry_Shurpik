@@ -55,12 +55,14 @@ public class ProductPage extends BasePage {
 
 
 
-    public void verifyPageUri() {
+    public ProductPage verifyPageUri() {
         Assert.assertTrue(getWebDriver().getCurrentUrl().contains("inventory.html"));
+        return this;
     }
 
-    public void verifyPageTitle() {
+    public ProductPage verifyPageTitle() {
         Assert.assertEquals(getText(title), "PRODUCTS");
+        return this;
     }
 
     public ProductPage addProductToBasket(String productName) {
