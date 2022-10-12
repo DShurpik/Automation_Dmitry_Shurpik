@@ -11,7 +11,11 @@ public class ProductPage extends BasePage {
 
     private final By title = By.xpath("//span[@class='title']");
 
-    private WebElement getElementProduct(String productName) {
+    private final By countInCart = By.xpath("//span[@class='shopping_cart_badge']");
+
+
+
+    public WebElement getElementProduct(String productName) {
         return getWebDriver().findElement(By.xpath("//*[@class = 'inventory_item_name' and text() = '" + productName + "']//ancestor::div[@class='inventory_item']"));
     }
 
@@ -19,7 +23,7 @@ public class ProductPage extends BasePage {
         return getElementProduct(productName).findElement(By.className("inventory_item_price"));
     }
 
-    private WebElement getAddToCartBtn(String productName) {
+    public WebElement getAddToCartBtn(String productName) {
         return getElementProduct(productName).findElement(By.tagName("button"));
     }
 
@@ -62,6 +66,7 @@ public class ProductPage extends BasePage {
 
     public ProductPage verifyPageTitle() {
         Assert.assertEquals(getText(title), "PRODUCTS");
+        System.out.println("title is displayed");
         return this;
     }
 
@@ -74,6 +79,16 @@ public class ProductPage extends BasePage {
     public ProductPage removeProductFromBaset(String productName) {
         click(getRemoveCartBtn(productName));
         System.out.println("product delete");
+        return this;
+    }
+
+    public ProductPage countProductInCartIsDispalyedAfterAdd(){
+        Assert.assertTrue(driver.findElement(countInCart).isDisplayed());
+        return this;
+    }
+
+    public ProductPage removeProductFromCart(String productName){
+        getWebDriver().findElement(By.xpath("//button[@data-test='remove-" + productName +"']")).click();
         return this;
     }
 

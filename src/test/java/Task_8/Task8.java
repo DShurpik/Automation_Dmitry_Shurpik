@@ -34,7 +34,7 @@ public class Task8 extends BaseTest {
                 .sendTextInInput("инпут enabled");
     }
 
-    public String fileLink = "D:\\code\\Automation_Dmitry_Shurpik\\src\\test\\java\\resources\\testFileForUpload.txt";
+    public String fileLink = System.getProperty("user.dir") + "src\\test\\java\\resources\\testFileForUpload.txt";
 
     @Test
     public void FileUploadTest() {
