@@ -1,11 +1,16 @@
 package pageObjects.baseObjects;
 
+import driver.UIElement;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static driver.SimpleDriver.getWebDriver;
 
@@ -28,6 +33,11 @@ public abstract class BasePage {
                 .ignoring(StaleElementReferenceException.class);
     }
 
+    protected void load(String url){
+        System.out.println("Open page: " + url);
+        driver.get(url);
+    }
+
     protected void enter(WebElement webElement, String enterData) {
         System.out.println("I'm enter :: " + enterData + ", by web element :: " + webElement);
         webElement.clear();
@@ -47,7 +57,8 @@ public abstract class BasePage {
 
     protected void click(WebElement webElement) {
         System.out.println("I'm click by :: " + webElement);
-        webElement.click();
+        new UIElement(driver, wait, webElement).click();
+        // работат клика из класса обертки
     }
 
     protected void isDisplayed(By locator) {
@@ -76,5 +87,41 @@ public abstract class BasePage {
     protected String getText(WebElement webElement) {
         System.out.println("I'm get text by  :: " + webElement);
         return webElement.getText();
+    }
+
+    protected List<String> getTexts(By locator) { // получение текстов из элементов
+        System.out.println("I'm get text by  :: " + locator);
+        List<String> data = new ArrayList<>();
+        for (WebElement webElement : driver.findElements(locator)){
+            data.add(webElement.getText());
+        }
+        return driver.findElements(locator).stream().map(webElement -> webElement.getText()).collect(Collectors.toList());
+    }
+
+    protected String getElementAttribute(By by, String attribute){
+        System.out.println("Get element " + by + " attribute " + attribute);
+        return driver.findElement(by).getAttribute(attribute);
+    }
+
+    public Boolean elementNotExist(By by){
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+        for (int counter = 0; counter < 20; counter++){
+            System.out.println("wait element not exist count = " + counter);
+            if(driver.findElements(by).size() == 0){
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                return true;
+            }
+            pause(1);
+        }
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        return false;
+    }
+
+    protected void pause(int second){
+        try {
+            Thread.sleep(second * 1000L);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

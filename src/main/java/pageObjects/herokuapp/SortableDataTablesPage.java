@@ -1,6 +1,7 @@
 package pageObjects.herokuapp;
 
 import org.openqa.selenium.By;
+import org.testng.Assert;
 import pageObjects.baseObjects.BasePage;
 
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.util.Map;
 
 public class SortableDataTablesPage extends BasePage {
 
-    private By table1 = By.id("table1");
+    private By table = By.id("table1");
 
     private By headers = By.xpath("//table[@id='table1']//th");
     // получение всех заголовков таблицы
@@ -21,7 +22,14 @@ public class SortableDataTablesPage extends BasePage {
     // получение элемента таблицы
 
     public SortableDataTablesPage clickTableColumn(String columnName) {
-        driver.findElement(headers).findElement(By.xpath(".//span[text() = '" + columnName + "']")).click();
+        driver.findElement(headers).findElement(By.xpath("//span[text() = '" + columnName + "']")).click();
+        return this;
+    }
+
+
+    public SortableDataTablesPage checkTableIsDisplayed() {
+        System.out.println("table 1 displayed");
+        Assert.assertTrue(driver.findElement(table).isDisplayed());
         return this;
     }
 
