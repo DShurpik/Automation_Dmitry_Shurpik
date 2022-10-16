@@ -1,6 +1,7 @@
 package pageObjects.saucedemo;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import pageObjects.baseObjects.BasePage;
@@ -11,6 +12,10 @@ public class LoginPage extends BasePage {
     private final By username = By.id("user-name");
     private final By password = By.id("password");
     private final By loginBtn = By.id("login-button");
+
+    private final By error = By.xpath("//div[@class][h3]");
+
+    private final By errorLockedUser = By.xpath("//button[@class]");
 
     public LoginPage open() {
         load("https://www.saucedemo.com/");
@@ -41,6 +46,16 @@ public class LoginPage extends BasePage {
     }
     public LoginPage verifyThatLoginPageIsClosed(){
         Assert.assertTrue(elementNotExist(loginBtn));
+        return this;
+    }
+
+    public LoginPage verifyError(){
+        Assert.assertTrue(elementNotExist(error));
+        return this;
+    }
+
+    public LoginPage errorLockedUserIsDisplayed(){
+        Assert.assertEquals(getText(errorLockedUser), "Epic sadface: Sorry, this user has been locked out.");
         return this;
     }
 

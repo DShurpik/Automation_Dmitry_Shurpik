@@ -3,6 +3,7 @@ package pageObjects.baseObjects;
 import driver.UIElement;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -123,5 +124,13 @@ public abstract class BasePage {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    protected void waitVisibilityOfElement(By locator) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    protected void verifyElementClickable(By locator) {
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 }
