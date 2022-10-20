@@ -1,5 +1,6 @@
 package Task_11;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObjects.baseObjects.BaseTest;
 import pageObjects.saucedemo.valueObject.LoginPage;
@@ -8,13 +9,13 @@ import pageObjects.saucedemo.valueObject.ProductPage;
 
 public class LoginTestBuilder extends BaseTest {
 
-    String url = "https://www.saucedemo.com/";
+    @Parameters({"url", "userName", "password"})
     @Test
-    public void test1() {
+    public void test1(String url, String userName, String password) {
         LoginPageBuilder loginPageBuilder = new LoginPageBuilder
                 .Builder()
-                .withUserName("standard_user")
-                .withPassword("secret_sauce")
+                .withUserName(userName)
+                .withPassword(password)
                 .build();
         new LoginPage()
                 .open(url)

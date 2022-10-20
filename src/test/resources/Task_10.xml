@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Task 10">
+
+    <parameter name="url" value="https://http://the-internet.herokuapp.com/"/>
+
+
+    <test name="EmailTest">
+        <classes>
+            <class name="Task_10.EmailTest"></class>
+        </classes>
+    </test>
+
+
+</suite>

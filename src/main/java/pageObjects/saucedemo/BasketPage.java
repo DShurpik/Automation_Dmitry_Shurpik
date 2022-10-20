@@ -4,7 +4,7 @@ import pageObjects.baseObjects.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import static driver.SimpleDriver.getWebDriver;
+import static driver.DriverManager.getWebDriver;
 
 public class BasketPage extends BasePage {
     private WebElement getElementCartItem(String productName) {

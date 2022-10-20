@@ -1,9 +1,11 @@
 package pageFactory.SauceDemo;
 
+import lombok.extern.log4j.Log4j;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pageObjects.baseObjects.BasePage;
+@Log4j
 
 public class LoginPage extends BasePage {
 
@@ -39,6 +41,4 @@ public class LoginPage extends BasePage {
         load(url);
         return this;
     }
-
-
 }

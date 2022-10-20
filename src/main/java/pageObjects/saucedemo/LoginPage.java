@@ -18,7 +18,7 @@ public class LoginPage extends BasePage {
     private final By errorLockedUser = By.xpath("//button[@class]");
 
     public LoginPage open() {
-        load("https://www.saucedemo.com/");
+        load();
         return this;
     }
     public LoginPage open(String url) {
@@ -28,6 +28,11 @@ public class LoginPage extends BasePage {
 
     public LoginPage enterUsername(String username) {
         enter(this.username, username);
+        return this;
+    }
+
+    public LoginPage enterUsername() {
+        enter(this.username, properties.getProperty("username"));
         return this;
     }
 
@@ -44,6 +49,12 @@ public class LoginPage extends BasePage {
         enter(this.password, password);
         return this;
     }
+
+    public LoginPage enterPassword() {
+        enter(this.password, properties.getProperty("password"));
+        return this;
+    }
+
     public LoginPage verifyThatLoginPageIsClosed(){
         Assert.assertTrue(elementNotExist(loginBtn));
         return this;

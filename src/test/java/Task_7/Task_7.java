@@ -48,19 +48,19 @@ public class Task_7 extends BaseTest {
     @Test(description = "autorization banned user")
     public void test3(){    // Попытка авторизации заблокированного пользователя
         LoginPage loginPage = new LoginPage();
-        loginPage.open();
-        loginPage.enterUsername("locked_out_user");
-        loginPage.enterPassword("secret_sauce");
-        loginPage.clickLogin();
-        loginPage.errorLockedUserIsDisplayed();
+        loginPage.open()
+                .enterUsername("locked_out_user")
+                .enterPassword("secret_sauce")
+                .clickLogin()
+                .errorLockedUserIsDisplayed();
     }
     @Test(description = "add product on cart")
     public void test4(){   // Добавление товара в корзину
         LoginPage loginPage = new LoginPage();
-        loginPage.open();
-        loginPage.enterUsername("standard_user");
-        loginPage.enterPassword("secret_sauce");
-        loginPage.clickLogin();
+        loginPage.open()
+                .enterUsername("standard_user")
+                .enterPassword("secret_sauce")
+                .clickLogin();
         ProductPage productPage = new ProductPage();
         productPage.getElementProduct("Sauce Labs Onesie").isDisplayed();
         productPage.getAddToCartBtn("Sauce Labs Onesie").click();
