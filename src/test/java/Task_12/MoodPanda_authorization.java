@@ -10,10 +10,6 @@ import pageObjects.moodpanda.selenide.LoginPage;
 import static com.codeborne.selenide.Configuration.baseUrl;
 
 public class MoodPanda_authorization extends SelenideBaseTest {
-    @BeforeTest
-    public void precondition(){
-        baseUrl = "https://moodpanda.com/";
-    }
 
     @Parameters({"email1", "password1"})
     @Test

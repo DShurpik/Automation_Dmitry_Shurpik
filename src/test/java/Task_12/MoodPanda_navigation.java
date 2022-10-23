@@ -10,10 +10,6 @@ import static com.codeborne.selenide.Configuration.baseUrl;
 
 public class MoodPanda_navigation extends SelenideBaseTest {
 
-    @BeforeTest
-    public void precondition(){
-        baseUrl = "https://moodpanda.com/";
-    }
 
     @Parameters({"email1", "password1"})
     @Test

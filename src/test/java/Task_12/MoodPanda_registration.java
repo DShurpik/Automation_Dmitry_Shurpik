@@ -12,10 +12,6 @@ import static com.codeborne.selenide.Configuration.baseUrl;
 
 public class MoodPanda_registration extends SelenideBaseTest {
 
-    @BeforeTest
-    public void precondition(){
-        baseUrl = "https://moodpanda.com/";
-    }
 
     @Parameters({"firstName1", "lastNameInitial1", "email1", "password1"})
     @Test(enabled = true)
