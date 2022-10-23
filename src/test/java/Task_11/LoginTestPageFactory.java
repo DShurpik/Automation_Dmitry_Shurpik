@@ -9,13 +9,13 @@ import pageObjects.baseObjects.BaseTest;
 
 public class LoginTestPageFactory extends BaseTest {
 
-    @Parameters({"url", "userName", "password"})
+    //@Parameters({"url", "userName", "password"})
     @Test
-    public void test1(String url, String userName, String password){
+    public void test1(){
         new LoginPage()
-                .open(url)
-                .entertUserName(userName)
-                .enterPassword(password)
+                .open(properties.getProperty("url"))
+                .entertUserName(properties.getProperty("username"))
+                .enterPassword(properties.getProperty("password"))
                 .clickLoginBtn();
         new ProductPage()
                 .titleIsDisplayed();

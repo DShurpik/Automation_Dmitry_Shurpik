@@ -1,13 +1,12 @@
 package Lecture13;
 
 import lombok.extern.log4j.Log4j;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageFactory.MoodPanda.HomePage;
-import pageObjects.MoodPanda.NavigationPage;
-import pageObjects.MoodPanda.SignUpPage;
-import pageObjects.MoodPanda.valueObject.SignUp;
-import pageObjects.MoodPanda.valueObject.SignUpBuilder;
+import pageObjects.moodpanda.NavigationPage;
+import pageObjects.moodpanda.SignUpPage;
+import pageObjects.moodpanda.valueObject.SignUp;
+import pageObjects.moodpanda.valueObject.SignUpBuilder;
 import pageObjects.baseObjects.BaseTest;
 
 @Log4j
@@ -30,7 +29,7 @@ public class ValueObject_Lecture13_Test extends BaseTest {
         }};
 
         // создаем объект, в конце обязательно метод build который собирает
-//        SignUpBuilder signUpBuilder1 = new SignUpBuilder.Builder().withLastName("S").withCheckbox(false).build();
+        SignUpBuilder signUpBuilder1 = new SignUpBuilder.Builder().withLastName("S").withCheckbox(false).build();
 //        SignUpBuilder signUpBuilder2 = new SignUpBuilder.Builder().withFirstName("Name").withLastName("LN").build();
 //        SignUpBuilder signUpBuilder3 = new SignUpBuilder.Builder().withEmail(email).build();
 //

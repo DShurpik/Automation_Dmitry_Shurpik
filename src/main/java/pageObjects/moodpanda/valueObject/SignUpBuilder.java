@@ -1,4 +1,4 @@
-package pageObjects.MoodPanda.valueObject;
+package pageObjects.moodpanda.valueObject;
 
 import lombok.Data;
 

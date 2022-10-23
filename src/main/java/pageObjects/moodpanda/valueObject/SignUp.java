@@ -1,4 +1,4 @@
-package pageObjects.MoodPanda.valueObject;
+package pageObjects.moodpanda.valueObject;
 
 public class SignUp {
 
