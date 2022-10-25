@@ -1,7 +1,10 @@
 package pageObjects.saucedemo.valueObject;
 
+import lombok.Data;
 import org.openqa.selenium.By;
 import pageObjects.baseObjects.BasePage;
+
+@Data
 
 public class LoginPage extends BasePage {
 
@@ -13,30 +16,6 @@ public class LoginPage extends BasePage {
     private String userName;
     private String password;
     private String url;
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
 
     public LoginPage enterUsername(String userName) {
         enter(this.userNameField, userName);
@@ -68,6 +47,7 @@ public class LoginPage extends BasePage {
 
     public LoginPage clickLogin() {
         click(loginBtn);
+
         return this;
     }
 

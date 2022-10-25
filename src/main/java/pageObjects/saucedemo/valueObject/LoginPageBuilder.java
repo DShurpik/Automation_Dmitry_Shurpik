@@ -1,5 +1,10 @@
 package pageObjects.saucedemo.valueObject;
 
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+
 public class LoginPageBuilder {
 
     String userName;
@@ -28,16 +33,5 @@ public class LoginPageBuilder {
         public LoginPageBuilder build(){
             return loginPageBuilder;
         }
-
-
-
-    }
-
-    @Override
-    public String toString() {
-        return "LoginPageBuilder{" +
-                "userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
-                '}';
     }
 }

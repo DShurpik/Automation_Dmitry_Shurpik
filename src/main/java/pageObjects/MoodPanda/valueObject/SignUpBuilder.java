@@ -1,5 +1,9 @@
 package pageObjects.MoodPanda.valueObject;
 
+import lombok.Data;
+
+@Data
+
 public class SignUpBuilder {
 
     private String firstName;
@@ -9,15 +13,15 @@ public class SignUpBuilder {
     private Boolean checkbox;
 
 
-    public static class Builder{
-        private SignUpBuilder signUpBuilder; // объект внешнего класса
+    public static class Builder{ // создается внутренний статический класс, в котором происходит реализация внешнего класса
+        private SignUpBuilder signUpBuilder; // переменная экземпляра(объекта) внешнего класса
 
         public Builder withFirstName(String firstName) {
             signUpBuilder.firstName = firstName;
             return this;
         }
 
-        // через сеттеры происходит наполнение данными
+        // через сеттеры происходит наполнение данными, все сеттеры начинаются с with
 
         public Builder withLastName(String lastName) {
             signUpBuilder.lastName = lastName;
@@ -39,11 +43,11 @@ public class SignUpBuilder {
             return this;
         }
 
-        public Builder(){ // создается конструктор статического класса
+        public Builder(){ // создается конструктор статического(внутреннего) класса, который инициализирует объект внешнего класса
             this.signUpBuilder = new SignUpBuilder();
         }
 
-        public SignUpBuilder build(){ // вызывается в конце и возвращает собранный объект с помощью сеттеров
+        public SignUpBuilder build(){ // вызывается в конце и возвращает собранный объект с заполненными полями с помощью сеттеров
             return signUpBuilder;
         }
     }
@@ -56,6 +60,26 @@ public class SignUpBuilder {
                 ", password='" + password + '\'' +
                 ", checkbox=" + checkbox +
                 '}';
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public Boolean getCheckbox() {
+        return checkbox;
     }
 
 

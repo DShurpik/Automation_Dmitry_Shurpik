@@ -2,6 +2,7 @@ package pageObjects.MoodPanda;
 
 import org.openqa.selenium.By;
 import pageObjects.MoodPanda.valueObject.SignUp;
+import pageObjects.MoodPanda.valueObject.SignUpBuilder;
 import pageObjects.baseObjects.BasePage;
 
 public class SignUpPage extends BasePage {
@@ -54,6 +55,16 @@ public class SignUpPage extends BasePage {
     }
 
     public SignUpPage enterData(SignUp signUp) { // на вход подаем объект и через гетеры получаем значения
+        enterFirstName(signUp.getFirstName());
+        enterLastNameInitial(signUp.getLastName());
+        enterEmail(signUp.getEmail());
+        enterPassword(signUp.getPassword());
+        if (signUp.getCheckbox()) clickCheckbox();
+        clickSignUp();
+        return this;
+    }
+
+    public SignUpPage enterData(SignUpBuilder signUp) {
         enterFirstName(signUp.getFirstName());
         enterLastNameInitial(signUp.getLastName());
         enterEmail(signUp.getEmail());

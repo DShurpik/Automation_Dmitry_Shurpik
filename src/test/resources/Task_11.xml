@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Task 11" thread-count="1" parallel="tests">
+<suite name="Task 11">
 
     <parameter name="url" value="https://www.saucedemo.com/"/>
     <parameter name="userName" value="standard_user"/>
     <parameter name="password" value="secret_sauce"/>
-    
-    <test name="SauceDemo pageFactory" enabled="false">
+
+    <test name="SauceDemo pageFactory" enabled="true">
         <classes>
             <class name="Task_11.LoginTestPageFactory"></class>
         </classes>        
     </test>
 
-    <test name="SauceDemo ValueObject" enabled="false">
+    <test name="SauceDemo ValueObject" enabled="true">
         <classes>
             <class name="Task_11.LoginTestValueObject"></class>
         </classes>
     </test>
 
-    <test name="SauceDemo Builder">
+    <test name="SauceDemo Builder" enabled="true">
         <classes>
             <class name="Task_11.LoginTestBuilder"></class>
         </classes>

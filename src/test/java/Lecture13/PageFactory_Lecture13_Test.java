@@ -1,22 +1,25 @@
 package Lecture13;
 
+import lombok.extern.log4j.Log4j;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageFactory.MoodPanda.HomePage;
 import pageFactory.MoodPanda.LoginPage;
 import pageObjects.baseObjects.BaseTest;
 
+@Log4j
+
 public class PageFactory_Lecture13_Test extends BaseTest {
 
-    @Parameters({"url","email", "password" })
+
     @Test
-    public void loginTest(String url, String email, String password){
+    public void loginTest(){
         new HomePage()
-                .open(url)
+                .open()
                 .clickGetStarted();
         new LoginPage()
-                .enterEmail(email)
-                .enterPassword(password)
+                .enterEmail(properties.getProperty("email"))
+                .enterPassword(properties.getProperty("password"))
                 .clickLogin()
                 .verifyAlertMsg("Your email or password is wrong");
     }
