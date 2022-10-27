@@ -1,6 +1,5 @@
 package Task_12;
 
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObjects.moodpanda.selenide.HomePage;
@@ -8,13 +7,12 @@ import pageObjects.moodpanda.selenide.SignUpPage;
 import pageObjects.baseObjects.SelenideBaseTest;
 import pageObjects.moodpanda.selenide.SignUpPageBuilder;
 
-import static com.codeborne.selenide.Configuration.baseUrl;
 
 public class MoodPanda_registration extends SelenideBaseTest {
 
 
     @Parameters({"firstName1", "lastNameInitial1", "email1", "password1"})
-    @Test(enabled = true)
+    @Test
     public void registration_test1(String firstName1, String lastNameInitial1, String email1, String password1){
         get(HomePage.class)
                 .clickSignUpBtn();
@@ -32,7 +30,7 @@ public class MoodPanda_registration extends SelenideBaseTest {
     }
 
     @Parameters({"firstName2", "lastNameInitial2", "email2", "password2"})
-    @Test(enabled = true)
+    @Test
     public void registration_test2(String firstName2, String lastNameInitial2, String email2, String password2){
         SignUpPage signUpPage = new SignUpPage(){{
             setFirstName(firstName2);
@@ -55,7 +53,7 @@ public class MoodPanda_registration extends SelenideBaseTest {
     }
 
     @Parameters({"firstName3", "lastNameInitial3", "email3", "password3"})
-    @Test(enabled = true)
+    @Test
     public void registration_test3(String firstName3, String lastNameInitial3, String email3, String password3){
 
         SignUpPageBuilder signUpPageBuilder = new SignUpPageBuilder

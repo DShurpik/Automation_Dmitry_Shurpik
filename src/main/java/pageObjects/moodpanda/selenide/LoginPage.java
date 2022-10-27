@@ -7,6 +7,8 @@ import org.testng.Assert;
 
 import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.webdriver;
+import static com.codeborne.selenide.WebDriverConditions.urlContaining;
 import static org.openqa.selenium.By.xpath;
 
 @Log4j
@@ -42,6 +44,12 @@ public class LoginPage {
         title.should(enabled).isEnabled();
         return this;
    }
+
+    public LoginPage verifyPageUri(String uri) {
+        log.debug("Uri: " + uri + " equal expected result");
+        webdriver().shouldHave(urlContaining(uri));
+        return this;
+    }
 
    public LoginPage clickYourDiaryBtn(){
         log.debug("Click on " + yourDiaryBtn);

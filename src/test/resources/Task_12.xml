@@ -8,17 +8,17 @@
 
         <parameter name="firstName1" value="John"/>
         <parameter name="lastNameInitial1" value="J"/>
-        <parameter name="email1" value="testemail1111@test.com"/>
+        <parameter name="email1" value="testemail111111@test.com"/>
         <parameter name="password1" value="password"/>
 
         <parameter name="firstName2" value="Mike"/>
         <parameter name="lastNameInitial2" value="M"/>
-        <parameter name="email2" value="testemail2222@test.com"/>
+        <parameter name="email2" value="testemail222222@test.com"/>
         <parameter name="password2" value="password"/>
 
         <parameter name="firstName3" value="Ben"/>
         <parameter name="lastNameInitial3" value="B"/>
-        <parameter name="email3" value="testemail3333@test.com"/>
+        <parameter name="email3" value="testemail333333@test.com"/>
         <parameter name="password3" value="password"/>
 
         <classes>
@@ -36,7 +36,7 @@
         <parameter name="password3" value="Password"/>
 
         <classes>
-            <class name="Task_12.MoodPanda_authorization"></class>
+            <class name="Task_12.MoodPanda_authorization"/>
         </classes>
     </test>
     
@@ -45,7 +45,13 @@
         <parameter name="password1" value="Password"/>
         
         <classes>
-            <class name="Task_12.MoodPanda_navigation"></class>
+            <class name="Task_12.MoodPanda_navigation"/>
+        </classes>
+    </test>
+    
+    <test name="Test navigation data provider" enabled="true">
+        <classes>
+            <class name="Task_12.MoodPanda_authorization_dataProvider"/>
         </classes>
     </test>
 </suite>

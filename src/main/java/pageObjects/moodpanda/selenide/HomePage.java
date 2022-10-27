@@ -5,19 +5,19 @@ import lombok.extern.log4j.Log4j;
 
 import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Selenide.$;
-import static org.openqa.selenium.By.xpath;
+import static org.openqa.selenium.By.linkText;
 
 @Log4j
 
 public class HomePage {
 
-    private SelenideElement getStartedBtn = $(xpath("//a[@href='/login'][text()=' Get started']"));
-    private SelenideElement signUpBtn = $(xpath("//a[@href='/signup'][text()=' Sign up']"));
-    private SelenideElement loginBtn = $(xpath("//a[@href='/login'][text()='Login']"));
-    private SelenideElement whatBtn = $(xpath("//a[text()=' What? ']"));
-    private SelenideElement howBtn = $(xpath("//a[text()=' How? ']"));
-    private SelenideElement aboutBtn = $(xpath("//a[text()=' About ']"));
-    private SelenideElement contactUsBtn = $(xpath("//a[text()=' Contact us ']"));
+    private SelenideElement getStartedBtn =$(linkText("Get started. It's free."));
+    private SelenideElement signUpBtn = $(linkText("Sign up"));
+    private SelenideElement loginBtn = $(linkText("Login"));
+    private SelenideElement whatBtn = $(linkText("What?"));
+    private SelenideElement howBtn = $(linkText("How?"));
+    private SelenideElement aboutBtn = $(linkText("About"));
+    private SelenideElement contactUsBtn = $(linkText("Contact us"));
 
     public HomePage clickGetStartedBtn(){
         log.debug("click on" + getStartedBtn);

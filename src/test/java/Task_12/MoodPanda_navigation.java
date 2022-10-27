@@ -1,12 +1,9 @@
 package Task_12;
 
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObjects.baseObjects.SelenideBaseTest;
 import pageObjects.moodpanda.selenide.*;
-
-import static com.codeborne.selenide.Configuration.baseUrl;
 
 public class MoodPanda_navigation extends SelenideBaseTest {
 
@@ -20,32 +17,30 @@ public class MoodPanda_navigation extends SelenideBaseTest {
                 .enterEmail(email1)
                 .enterPassword(password1)
                 .clickLoginBtn()
-                .titleIsEnabled()
-                .clickYourDiaryBtn();
-        get(DiaryPage.class)
-                .cardOfUserIsEnabled()
-                .clickYouDashboard();
-        get(DashboardPage.class)
-                .dashboardIsdispalyed()
-                .clickPatronsBtn();
-        get(PatronsPage.class)
-                .patronFieldIsDisplayed();
+                .verifyPageUri("global");
+        get(NavigationPage.class)
+                .clickNavigationItem("Your profile")
+                .verifyPageUri("user");
+        get(NavigationPage.class)
+                .clickNavigationItem("Patrons")
+                .verifyPageUri("patron");
     }
 
     @Test
     public void navigation_test_without_authorization(){
-        get(HomePage.class)
-                .clickWhatBtn();
-        get(WhatPage.class)
-                .titleIsDisplayed()
-                .clickHowBtn();
-        get(HowPage.class)
-                .titleIsDisplayed()
-                .clickAboutBtn();
-        get(AboutPage.class)
-                .titleIsDisplayed()
-                .clickOnContactBtn();
-        get(ContackUsPage.class)
-                .titleIsDisplayed();
+        get(NavigationPage.class)
+                .verifyPageUri("https://moodpanda.com/");
+        get(NavigationPage.class)
+                .clickNavigationItem("What?")
+                .verifyPageUri("monitor-your-mood");
+        get(NavigationPage.class)
+                .clickNavigationItem("How?")
+                .verifyPageUri("how-to-use-a-mood-diary");
+        get(NavigationPage.class)
+                .clickNavigationItem("About")
+                .verifyPageUri("about");
+        get(NavigationPage.class)
+                .clickNavigationItem("Contact us")
+                .verifyPageUri("contact");
     }
 }

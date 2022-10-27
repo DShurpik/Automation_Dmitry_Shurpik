@@ -1,13 +1,10 @@
 package Task_12;
 
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObjects.moodpanda.selenide.HomePage;
 import pageObjects.baseObjects.SelenideBaseTest;
 import pageObjects.moodpanda.selenide.LoginPage;
-
-import static com.codeborne.selenide.Configuration.baseUrl;
 
 public class MoodPanda_authorization extends SelenideBaseTest {
 
@@ -20,7 +17,7 @@ public class MoodPanda_authorization extends SelenideBaseTest {
                 .enterEmail(email1)
                 .enterPassword(password1)
                 .clickLoginBtn()
-                .titleIsEnabled();
+                .verifyPageUri("global");
     }
 
     @Parameters({"email2", "password2"})
@@ -32,7 +29,7 @@ public class MoodPanda_authorization extends SelenideBaseTest {
                 .enterEmail(email2)
                 .enterPassword(password2)
                 .clickLoginBtn()
-                .titleIsEnabled();
+                .verifyPageUri("global");
     }
 
     @Parameters({"email3", "password3"})
@@ -44,6 +41,6 @@ public class MoodPanda_authorization extends SelenideBaseTest {
                 .enterEmail(email3)
                 .enterPassword(password3)
                 .clickLoginBtn()
-                .titleIsEnabled();
+                .verifyPageUri("global");
     }
 }
