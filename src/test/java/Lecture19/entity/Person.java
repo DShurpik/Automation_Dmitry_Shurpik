@@ -1,2 +1,19 @@
-package Lecture19.Person;public class Person {
+package Lecture19.entity;
+
+import lombok.Data;
+
+import java.util.List;
+
+@Data
+
+public class Person {
+    Integer id;
+    String name;
+    Integer age;
+    Boolean work;
+    String country;
+    String sex;
+    List<String> cars;
+    List<Children> children;
+    Wife wife;
 }

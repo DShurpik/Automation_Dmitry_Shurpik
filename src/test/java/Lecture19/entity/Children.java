@@ -1,2 +1,10 @@
-package Lecture19.entity;public class Children {
+package Lecture19.entity;
+
+import lombok.Data;
+
+@Data
+
+public class Children {
+    String name;
+    Integer age;
 }

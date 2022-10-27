@@ -1,19 +1,10 @@
-Feature: Mood panda test
-
-  Scenario: Navigation in application
-    Given open home page
-    When i click on menu item "What?"
-    Then i check that uri "monitor-your-mood"
-    When i click on menu item "How?"
-    Then i check that uri "how-to-use-a-mood-diary"
-    When i click on menu item "About"
-    Then i check that uri "about"
-
-
-  Scenario:
-      Given open home page
-      When i click on menu item "Login"
-      Then i check that uri "login"
-      When i enter email "test@test.ru", password "123456"
-      And i click login button
-      Then i check error message "Your email or password is wrong"
+Feature: Rabota by test
+  
+  Scenario: Search jobs
+    Given open main page
+    When i wait subscribe city
+    When i change city "Минск"
+    When i send on search field name job "QA Automation"
+    And i click on search button
+    And i check on title have name "QA Automation" of jobs
+    Then i equal count of work "53" on result and count of work "53" from feature file
