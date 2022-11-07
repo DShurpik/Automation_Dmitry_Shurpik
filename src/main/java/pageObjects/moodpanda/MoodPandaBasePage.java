@@ -1,4 +1,4 @@
-package pageObjects.MoodPanda;
+package pageObjects.moodpanda;
 
 import pageObjects.baseObjects.BasePage;
 

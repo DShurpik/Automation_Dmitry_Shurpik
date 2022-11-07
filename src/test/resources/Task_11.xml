@@ -2,10 +2,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Task 11">
 
-    <parameter name="url" value="https://www.saucedemo.com/"/>
-    <parameter name="userName" value="standard_user"/>
-    <parameter name="password" value="secret_sauce"/>
-
     <test name="SauceDemo pageFactory" enabled="true">
         <classes>
             <class name="Task_11.LoginTestPageFactory"></class>

@@ -1,8 +1,8 @@
-package pageObjects.MoodPanda;
+package pageObjects.moodpanda;
 
 import org.openqa.selenium.By;
-import pageObjects.MoodPanda.valueObject.SignUp;
-import pageObjects.MoodPanda.valueObject.SignUpBuilder;
+import pageObjects.moodpanda.valueObject.SignUp;
+import pageObjects.moodpanda.valueObject.SignUpBuilder;
 import pageObjects.baseObjects.BasePage;
 
 public class SignUpPage extends BasePage {

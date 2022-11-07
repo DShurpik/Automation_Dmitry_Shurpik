@@ -9,16 +9,16 @@ import pageObjects.saucedemo.valueObject.ProductPage;
 
 public class LoginTestBuilder extends BaseTest {
 
-    @Parameters({"url", "userName", "password"})
+    //@Parameters({"url", "userName", "password"})
     @Test
-    public void test1(String url, String userName, String password) {
+    public void test1(/**String url, String userName, String password*/) {
         LoginPageBuilder loginPageBuilder = new LoginPageBuilder
                 .Builder()
-                .withUserName(userName)
-                .withPassword(password)
+                .withUserName(properties.getProperty("username"))
+                .withPassword(properties.getProperty("password"))
                 .build();
         new LoginPage()
-                .open(url)
+                .open(properties.getProperty("url"))
                 .enterData(loginPageBuilder)
                 .clickLogin();
         new ProductPage()

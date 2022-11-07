@@ -1,4 +1,4 @@
-package pageObjects.MoodPanda;
+package pageObjects.moodpanda;
 
 import org.openqa.selenium.By;
 import pageObjects.baseObjects.BasePage;

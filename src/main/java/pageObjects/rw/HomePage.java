@@ -1,0 +1,49 @@
+package pageObjects.rw;
+
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
+
+import static com.codeborne.selenide.Condition.enabled;
+import static com.codeborne.selenide.Selectors.byXpath;
+import static com.codeborne.selenide.Selenide.$;
+
+public class HomePage {
+
+    // создаем селенид элементы
+    private final SelenideElement from = $("#acFrom");
+    private final SelenideElement to = $(By.id("acTo"));
+    private final SelenideElement date = $("#yDate");
+
+    private final SelenideElement searchBtn = $("[class=std-button]");
+
+    private SelenideElement getMiddleCalendar(String date) {
+        return $(byXpath("//*[contains(@class, 'group-middle')]"))
+                .should(Condition.visible)
+                .find(By.xpath("table"))
+                .find(By.linkText(date));
+    }
+
+    public HomePage enterFrom(String from){
+        this.from.sendKeys(from);
+        return this;
+    }
+
+    public HomePage enterTo(String to){
+        this.to.sendKeys(to);
+        return this;
+    }
+
+    public HomePage enterCalendar(String date){
+        this.date.click();
+        this.getMiddleCalendar(date).click();
+        return this;
+    }
+
+    public HomePage clickSearch(){
+        this.searchBtn.should(enabled).click();
+        return this;
+    }
+
+
+}
