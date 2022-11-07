@@ -25,3 +25,7 @@ mvn -Dtest=Lecture8_1#login1withProperty test -DAAA="standard_user" -DFFF="secre
 
 mvn clean test -DsuiteXml="Lecture_11"
 
+
+mvn allure:serve команды для аллюра
+mvn allure:report
+

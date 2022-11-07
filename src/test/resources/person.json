@@ -1,0 +1,27 @@
+{
+  "id" : 1,
+  "name" : "User",
+  "age" : 30,
+  "work" : true,
+  "country" : "Belarus",
+  "sex" : "male",
+  "cars" : [
+    "audi",
+    "vw"
+  ],
+  "children": [
+    {
+      "name" : "userka",
+      "age" : 10
+    },
+    {
+      "name" : "userka1",
+      "age" : 2
+    }
+  ],
+  "wife" : {
+    "name" : "User",
+    "age" : 29,
+    "work" : null
+  }
+}
