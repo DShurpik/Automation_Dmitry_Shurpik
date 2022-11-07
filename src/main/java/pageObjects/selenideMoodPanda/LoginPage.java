@@ -32,4 +32,5 @@ public class LoginPage {
         notification.should(Condition.text(message));
         return this;
     }
+
 }
