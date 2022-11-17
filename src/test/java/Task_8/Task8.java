@@ -1,14 +1,11 @@
 package Task_8;
 
-import driver.SimpleDriver;
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import pageObjects.baseObjects.BaseTest;
 import pageObjects.herokuapp.DynamicControlsPage;
 import pageObjects.herokuapp.FileUploadPage;
 import pageObjects.herokuapp.NavigationPage;
 
-import static driver.SimpleDriver.getWebDriver;
 import static pageObjects.herokuapp.NavigationItems.DYNAMIC_CONTROLS;
 import static pageObjects.herokuapp.NavigationItems.FILE_UPLOAD;
 

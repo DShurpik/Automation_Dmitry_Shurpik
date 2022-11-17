@@ -22,7 +22,7 @@
         <parameter name="password3" value="password"/>
 
         <classes>
-            <class name="Task_12.MoodPanda_registration"/>
+            <class name="Lecture12.Task_12.MoodPanda_registration"/>
         </classes>
     </test>
     
@@ -36,7 +36,7 @@
         <parameter name="password3" value="Password"/>
 
         <classes>
-            <class name="Task_12.MoodPanda_authorization"/>
+            <class name="Lecture12.Task_12.MoodPanda_authorization"/>
         </classes>
     </test>
     
@@ -45,13 +45,13 @@
         <parameter name="password1" value="Password"/>
         
         <classes>
-            <class name="Task_12.MoodPanda_navigation"/>
+            <class name="Lecture12.Task_12.MoodPanda_navigation"/>
         </classes>
     </test>
     
     <test name="Test navigation data provider" enabled="true">
         <classes>
-            <class name="Task_12.MoodPanda_authorization_dataProvider"/>
+            <class name="Lecture12.Task_12.MoodPanda_authorization_dataProvider"/>
         </classes>
     </test>
 </suite>

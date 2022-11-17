@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import static pageObjects.herokuapp.NavigationItems.SORTABLE_DATA_TABLES;
+
 @Log4j
 
 public class EmailTest extends BaseTest {
@@ -32,9 +33,9 @@ public class EmailTest extends BaseTest {
         List<String> emailData = actaualEmail.stream().map(email -> {
             if (email.contains("@yahoo.com")) {
                 return email.replace("@yahoo.com", "@gmail.com");
-            } else if(email.contains("@hotmail.com")){
+            } else if (email.contains("@hotmail.com")) {
                 return email.replace("@hotmail.com", "@gmail.com");
-            } else if(email.contains("@earthlink.net")){
+            } else if (email.contains("@earthlink.net")) {
                 return email.replace("@earthlink.net", "@gmail.com");
             }
             return email;
@@ -71,15 +72,15 @@ public class EmailTest extends BaseTest {
 
         List<String> emailData = actaualEmail.stream()
                 .map(email -> {
-            if (email.contains("@yahoo.com")) {
-                return email.replace("@yahoo.com", "@gmail.com");
-            } else if(email.contains("@hotmail.com")){
-                return email.replace("@hotmail.com", "@gmail.com");
-            } else if(email.contains("@earthlink.net")){
-                return email.replace("@earthlink.net", "@gmail.com");
-            }
-            return email;
-        })
+                    if (email.contains("@yahoo.com")) {
+                        return email.replace("@yahoo.com", "@gmail.com");
+                    } else if (email.contains("@hotmail.com")) {
+                        return email.replace("@hotmail.com", "@gmail.com");
+                    } else if (email.contains("@earthlink.net")) {
+                        return email.replace("@earthlink.net", "@gmail.com");
+                    }
+                    return email;
+                })
                 .sorted()
                 .collect(Collectors.toList());
         log.debug("after add @gmail.com and sorted " + emailData);
@@ -96,7 +97,7 @@ public class EmailTest extends BaseTest {
     }
 
     @Test
-    public void test2(){
+    public void test2() {
         new NavigationPage()
                 .open()
                 .navigateTo(SORTABLE_DATA_TABLES);
